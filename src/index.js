@@ -25,7 +25,7 @@ function renderCountryList(countries) {
     .map((country) => {
       return `
           <li>
-          <img src=${country.flags.svg} alt="flag" width="60" /><p>${country.name.official}</p>
+          <img src=${country.flags.svg} alt="flag" height="20" /><p>${country.name.official}</p>
           </li>
       `;
     })
