@@ -6,7 +6,7 @@ function fetchCountries(query) {
     `https://restcountries.com/v3.1/name/${query}`
   ).then((response) => {
     if (!response.ok) {
-      throw new Notiflix.Notify.failure('Qui timide rogat docet negare')(response.status);
+      throw new Error(response.status);
     }
     return response.json();
   });

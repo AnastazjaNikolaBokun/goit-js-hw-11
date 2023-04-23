@@ -10,10 +10,12 @@ var debounce = require('lodash.debounce');
 
 
 fetchCountriesInput.addEventListener("input", debounce(() => {
-  const query = fetchCountriesInput.value;
+    const query = fetchCountriesInput.value;
   fetchCountries(query.trim())
     .then((countries) => renderCountryList(countries))
-    .catch((error) => Notiflix.Notify.failure('Oops, there is no country with that name'));
+    .catch((error) => Notiflix.Notify.failure('Oops, there is no country with that name'));   
+    countryList.innerHTML = "";
+    countrySingle.innerHTML = "";
 }, 300));
 
 function renderCountryList(countries) {
@@ -45,8 +47,8 @@ function renderCountryList(countries) {
 
 if (countriesArray.length > 9) {
   Notiflix.Notify.info('Too many matches found. Please enter a more specific name.');
-  countryList.innerHTML = " ";
-  countrySingle.innerHTML = " ";
+  countryList.innerHTML = "";
+  countrySingle.innerHTML = "";
 } else if (countriesArray.length > 1) {
 countryList.innerHTML = countryName;
 countrySingle.innerHTML = "";
