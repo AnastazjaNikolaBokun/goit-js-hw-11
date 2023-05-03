@@ -14,6 +14,7 @@ let query = '';
 
 async function getUser(event) {
   event.preventDefault();
+  localStorage.clear();
   let {
     elements: { searchQuery },
   } = event.currentTarget;
