@@ -75,7 +75,6 @@ function renderPictureGrid(response) {
     }
 
     const link = document.querySelectorAll('a');
-    console.log(pictures.length);
     console.log(link);
 
     if (link.length >= picturesTotalHits) {
